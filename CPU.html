@@ -35,7 +35,7 @@
     <h1 class="d-flex justify-content-center title">
       Rock, Paper, Scissors, Lizard, Spock
     </h1>
-    <div  id="hide" class="game-container">
+    <div  class="game-container">
       <div class="scoreboard">
         <div class="d-flex justify-content-center">
           <h2>Score</h2>
@@ -45,15 +45,16 @@
           <p>CPU: <span id="cpuScore">0</span></p>
         </div>
       </div>
-    
+   
       <h2 class="pickOne">Pick One</h2>
-      <div class="options">
+      <div id="hide" class="options">
         <button id="rock" class="option" ><img class="img-fluid" src="./Assets/vecteezy_stones-or-rocks-natural-object-pixel-art-retro-vintage_.jpg" alt="rock">Rock</button>
         <button id="paper" class="option" > <img class="img-fluid" src="./Assets/vecteezy_paper-sheet-pixel_10968271.jpg" alt="paper"> Paper</button>
         <button id="scissors" class="option" > <img class="img-fluid" src="./Assets/vecteezy_pixel-art-illustration-scissors-pixelated-scissors-tools_24773302.jpg" alt="scissors">Scissors</button>
         <button id="Lizard" class="option" ><img class="img-fluid" src="./Assets/pixel-art-illustration-komodo-dragon-pixelated-komodo-komodo-dragon-lizard-reptile-animal-icon-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-free-vector.jpg" alt="Lizard">Lizard</button>
         <button id="spock" class="option" > <img class="img-fluid" src="./Assets/Spock.webp" alt="spock"> Spock</button>
       </div>
+     <button id="playAgain" class="button hidden" >Play Again</button>
     </div>
     <script
     src="./Scripts/app.js"

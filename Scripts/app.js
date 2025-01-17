@@ -1,37 +1,39 @@
-const rulesBtn = document.getElementById('rulesBtn');
-const rulesPopup = document.getElementById('rulesPopup');
-const hide = document.getElementById('hide')
+const rulesBtn = document.getElementById("rulesBtn");
+const rulesPopup = document.getElementById("rulesPopup");
+const hide = document.getElementById("hide");
+const playAgain = document.getElementById("playAgain");
 
-rulesBtn.addEventListener('click', function(){
-  rulesPopup.classList.remove('hidden');
+rulesBtn.addEventListener("click", function () {
+  rulesPopup.classList.remove("hidden");
 });
 
-rulesBtn.addEventListener('blur',function(){
-  rulesPopup.classList.add('hidden');
+rulesBtn.addEventListener("blur", function () {
+  rulesPopup.classList.add("hidden");
 });
-// Select HTML elements
-const playerScoreSpan = document.getElementById('playerScore');
-const cpuScoreSpan = document.getElementById('cpuScore');
-const resultMessage = document.getElementById('resultMessage');
 
-// Variables to store scores
+playAgain.addEventListener("click", function () {
+  playAgain.classList.add("hidden");
+  hide.classList.remove("hidden");
+});
+
+const playerScoreSpan = document.getElementById("playerScore");
+const cpuScoreSpan = document.getElementById("cpuScore");
+const resultMessage = document.getElementById("resultMessage");
+
 let playerScore = 0;
 let cpuScore = 0;
 
-// Function to get the computer's choice
 function getComputerChoice() {
   const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
   const randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex];
 }
 
-// Function to determine the winner
 function determineWinner(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
     return "It's a tie!";
   }
 
-  // Check win conditions using if statements
   if (playerChoice === "Rock") {
     if (computerChoice === "Scissors" || computerChoice === "Lizard") {
       return "You win!";
@@ -73,7 +75,6 @@ function determineWinner(playerChoice, computerChoice) {
   }
 }
 
-// Function to update the score on the webpage
 function updateScore(result) {
   if (result === "You win!") {
     playerScore++;
@@ -85,51 +86,47 @@ function updateScore(result) {
   cpuScoreSpan.textContent = cpuScore;
 }
 
-
-
-
-// Event listener for each option (using IDs for each button)
-document.getElementById('rock').addEventListener('click', () => {
+document.getElementById("rock").addEventListener("click", () => {
   const playerChoice = "Rock";
   const computerChoice = getComputerChoice();
-  hide.classList.remove('hidden');
+  hide.classList.add("hidden");
+  playAgain.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
- 
 });
 
-document.getElementById('paper').addEventListener('click', () => {
+document.getElementById("paper").addEventListener("click", () => {
   const playerChoice = "Paper";
   const computerChoice = getComputerChoice();
-  hide.classList.add('hidden');
+  hide.classList.add("hidden");
+  playAgain.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
-  
 });
 
-document.getElementById('scissors').addEventListener('click', () => {
+document.getElementById("scissors").addEventListener("click", () => {
   const playerChoice = "Scissors";
   const computerChoice = getComputerChoice();
-  hide.classList.add('hidden');
+  hide.classList.add("hidden");
+  playAgain.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
-  
 });
 
-document.getElementById('lizard').addEventListener('click', () => {
+document.getElementById("lizard").addEventListener("click", () => {
   const playerChoice = "Lizard";
   const computerChoice = getComputerChoice();
-  hide.classList.add('hidden');
+  hide.classList.add("hidden");
+  playAgain.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
- 
 });
 
-document.getElementById('spock').addEventListener('click', () => {
+document.getElementById("spock").addEventListener("click", () => {
   const playerChoice = "Spock";
   const computerChoice = getComputerChoice();
-  hide.classList.add('hidden');
+  hide.classList.add("hidden");
+  playAgain.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
- 
 });

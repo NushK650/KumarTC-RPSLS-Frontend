@@ -34,6 +34,10 @@ body {
 
 
 }
+#playAgain{
+    display: flex;
+    justify-self: center;
+}
 
 .gamebtn {
     font-size: 75px;
