@@ -29,13 +29,13 @@ body {
 
 .GameBtns {
     display: flex;
-    justify-content: space-evenly;
     margin-top: 300px;
+    justify-content: space-evenly;
+
 
 }
 
 .gamebtn {
-
     font-size: 75px;
     aspect-ratio: 3/1;
     width: 300px;
@@ -49,7 +49,91 @@ body {
     text-align: center;
 }
 
-.hidden
-{
+.popup {
+    font-family: 'Pixel', Arial, Helvetica, sans-serif;
+    position: fixed;
+    left: 39%;
+    text-align: center;
+    width: 500px;
+    background-color: #13004C;
+    color: white;
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 20px;
+
+
+
+}
+
+.popup h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.popup ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+
+
+
+.hidden {
     display: none;
-  }
+}
+
+.scoreboard {
+    float: left;
+    font-family: 'Pixel', Arial, sans-serif;
+    background-color: #13004C;
+    color: white;
+    left: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+
+}
+
+.pickOne {
+    font-family: 'Pixel', Arial, sans-serif;
+    justify-self: center;
+    color: white;
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-right: 120px;
+}
+
+.option {
+    text-align: center;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0cap;
+    color: white;
+    font-family: 'Pixel', Arial, sans-serif;
+    font-size: 30px;
+    margin-right: 50px;
+}
+
+.img-fluid {
+    margin-bottom: 25px;
+    aspect-ratio: 1/1;
+
+}
+
+.game-container {
+
+    text-align: left;
+    margin-top: 150px;
+
+}
