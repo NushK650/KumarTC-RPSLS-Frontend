@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="d-flex justify-content-end">
-      <button class="button">Rules</button>
+      <button class="button rulesBtn">Rules</button>
     </div>
     <h1 class="d-flex justify-content-center title">
       Rock, Paper, Scissors, Lizard, Spock
@@ -22,11 +22,27 @@
     <div class="GameBtns">
       <a href="1v1.html" class="gamebtn"> 1V1 </a>
       <a href="CPU.html" class="gamebtn"> CPU </a>
+      <div id="rulesPopup" class="popup hidden">
+        <h2>Da Rulez</h2>
+        <ul>
+          <li>Scissors beat Paper</li>
+          <li>Paper beats Rock</li>
+          <li>Rock beats Lizard</li>
+          <li>Lizard beats Spock</li>
+          <li>Spock beats Scissors</li>
+          <li>Scissors beat Lizard</li>
+          <li>Lizard beats Paper</li>
+          <li>Paper beats Spock</li>
+          <li>Spock beats Rock</li>
+          <li>Rock beats Scissors</li>
+        </ul>
+        </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
+      src="./Scripts/app.js"
     ></script>
   </body>
 </html>
