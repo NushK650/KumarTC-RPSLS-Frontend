@@ -2,6 +2,8 @@ const rulesBtn = document.getElementById("rulesBtn");
 const rulesPopup = document.getElementById("rulesPopup");
 const hide = document.getElementById("hide");
 const playAgain = document.getElementById("playAgain");
+const pickOne = document.getElementById("pickOne");
+const display = document.getElementById("display");
 
 rulesBtn.addEventListener("click", function () {
   rulesPopup.classList.remove("hidden");
@@ -14,6 +16,8 @@ rulesBtn.addEventListener("blur", function () {
 playAgain.addEventListener("click", function () {
   playAgain.classList.add("hidden");
   hide.classList.remove("hidden");
+  display.classList.add("hidden");
+  pickOne.innerText = "Pick One";
 });
 
 const playerScoreSpan = document.getElementById("playerScore");
@@ -27,6 +31,61 @@ function getComputerChoice() {
   const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
   const randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex];
+}
+function updateCpuChoiceImage(computerChoice) {
+  const cpuIMG = document.getElementById("cpuIMG");
+
+  // Update the image source and alt text based on the CPU's choice
+  switch (computerChoice) {
+    case "Rock":
+      cpuIMG.innerHTML = `
+      <h3>CPU</h3>
+      <img
+      class="img-fluid"
+      src="./Assets/vecteezy_stones-or-rocks-natural-object-pixel-art-retro-vintage_.jpg"
+      alt="rock"
+    /> 
+    <p>${computerChoice}</p> `;
+
+      break;
+    case "Paper":
+      cpuIMG.innerHTML = `
+      <h3>CPU</h3>
+      <img
+      class="img-fluid"
+      src="./Assets/vecteezy_paper-sheet-pixel_10968271.jpg"
+      alt="paper"
+    />
+    <p>${computerChoice}</p>`;
+      break;
+    case "Scissors":
+      cpuIMG.innerHTML = `
+      <h3>CPU</h3>
+      <img
+      class="img-fluid"
+      src="./Assets/vecteezy_pixel-art-illustration-scissors-pixelated-scissors-tools_24773302.jpg"
+      alt="scissors"
+    />
+    <p>${computerChoice}</p>`;
+      break;
+    case "Lizard":
+      cpuIMG.innerHTML = `
+      
+      <h3>CPU</h3>
+      <img
+      class="img-fluid"
+      src="./Assets/pixel-art-illustration-komodo-dragon-pixelated-komodo-komodo-dragon-lizard-reptile-animal-icon-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-free-vector.jpg"
+      alt="Lizard"
+    />
+    <p>${computerChoice}</p>`;
+      break;
+    case "Spock":
+      cpuIMG.innerHTML = `
+      <h3>CPU</h3>
+      <img class="img-fluid" src="./Assets/Spock.webp" alt="spock" />
+      <p>${computerChoice}</p>`;
+      break;
+  }
 }
 
 function determineWinner(playerChoice, computerChoice) {
@@ -78,55 +137,69 @@ function determineWinner(playerChoice, computerChoice) {
 function updateScore(result) {
   if (result === "You win!") {
     playerScore++;
+    pickOne.innerText = "YOU WIN";
   } else if (result === "You lose!") {
     cpuScore++;
+    pickOne.innerText = "YOU LOSE";
+  } else {
+    pickOne.innerText = "DRAW";
   }
 
   playerScoreSpan.textContent = playerScore;
   cpuScoreSpan.textContent = cpuScore;
 }
 
-document.getElementById("rock").addEventListener("click", () => {
+document.getElementById("rock").addEventListener("click", function () {
   const playerChoice = "Rock";
   const computerChoice = getComputerChoice();
   hide.classList.add("hidden");
   playAgain.classList.remove("hidden");
+  display.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
+  updateCpuChoiceImage(computerChoice);
 });
 
-document.getElementById("paper").addEventListener("click", () => {
+document.getElementById("paper").addEventListener("click", function () {
   const playerChoice = "Paper";
   const computerChoice = getComputerChoice();
   hide.classList.add("hidden");
   playAgain.classList.remove("hidden");
+  display.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
+  updateCpuChoiceImage(computerChoice);
 });
 
-document.getElementById("scissors").addEventListener("click", () => {
+document.getElementById("scissors").addEventListener("click", function () {
   const playerChoice = "Scissors";
   const computerChoice = getComputerChoice();
   hide.classList.add("hidden");
   playAgain.classList.remove("hidden");
+  display.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
+  updateCpuChoiceImage(computerChoice);
 });
 
-document.getElementById("lizard").addEventListener("click", () => {
+document.getElementById("Lizard").addEventListener("click", function () {
   const playerChoice = "Lizard";
   const computerChoice = getComputerChoice();
   hide.classList.add("hidden");
   playAgain.classList.remove("hidden");
+  display.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
+  updateCpuChoiceImage(computerChoice);
 });
 
-document.getElementById("spock").addEventListener("click", () => {
+document.getElementById("spock").addEventListener("click", function () {
   const playerChoice = "Spock";
   const computerChoice = getComputerChoice();
   hide.classList.add("hidden");
   playAgain.classList.remove("hidden");
+  display.classList.remove("hidden");
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
+  updateCpuChoiceImage(computerChoice);
 });

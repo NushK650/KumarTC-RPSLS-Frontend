@@ -15,6 +15,17 @@ body {
     color: white;
     font-family: 'Pixel', Arial, Helvetica, sans-serif;
 }
+#cpuIMG{
+    color: white;
+    width: 120px;
+    border-radius: 5px;
+    border:solid;
+    background-color: #13004C;
+    border-color: white;
+    font-family: 'Pixel', Arial, Helvetica, sans-serif !important;
+    text-align: center;
+    left: 30%;
+}
 
 .button {
     color: white;
@@ -22,10 +33,11 @@ body {
     border-color: white;
     border: solid;
     background-color: #13004C;
-    font-family: 'Pixel', Arial, Helvetica, sans-serif;
+    font-family: 'Pixel', Arial, Helvetica, sans-serif !important;
     text-decoration: none;
     text-align: center;
 }
+
 
 .GameBtns {
     display: flex;
@@ -35,6 +47,7 @@ body {
 
 }
 #playAgain{
+    margin-top: 300px;
     display: flex;
     justify-self: center;
 }
@@ -69,6 +82,7 @@ body {
 
 }
 
+
 .popup h2 {
     font-size: 3rem;
     margin-bottom: 10px;
@@ -87,7 +101,7 @@ body {
 
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .scoreboard {
@@ -102,8 +116,12 @@ body {
     width: 200px;
 
 }
+#display{
+    display: grid;
+    justify-content: space-evenly;
+}
 
-.pickOne {
+#pickOne {
     font-family: 'Pixel', Arial, sans-serif;
     justify-self: center;
     color: white;
@@ -132,11 +150,12 @@ body {
 .img-fluid {
     margin-bottom: 25px;
     aspect-ratio: 1/1;
+    width: 100px;
 
 }
 
 .game-container {
-
+display: grid;
     text-align: left;
     margin-top: 150px;
 
