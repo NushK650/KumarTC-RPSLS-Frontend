@@ -88,6 +88,62 @@ function updateCpuChoiceImage(computerChoice) {
   }
 }
 
+function updateUserChoice(playerChoice) {
+  const userIMG = document.getElementById("userIMG");
+
+  // Update the image source and alt text based on the CPU's choice
+  switch (playerChoice) {
+    case "Rock":
+      userIMG.innerHTML = `
+      <h3>YOU</h3>
+      <img
+      class="img-fluid"
+      src="./Assets/vecteezy_stones-or-rocks-natural-object-pixel-art-retro-vintage_.jpg"
+      alt="rock"
+    /> 
+    <p>${playerChoice}</p> `;
+
+      break;
+    case "Paper":
+      userIMG.innerHTML = `
+      <h3>YOU</h3>
+      <img
+      class="img-fluid"
+      src="./Assets/vecteezy_paper-sheet-pixel_10968271.jpg"
+      alt="paper"
+    />
+    <p>${playerChoice}</p>`;
+      break;
+    case "Scissors":
+      userIMG.innerHTML = `
+      <h3>YOU</h3>
+      <img
+      class="img-fluid"
+      src="./Assets/vecteezy_pixel-art-illustration-scissors-pixelated-scissors-tools_24773302.jpg"
+      alt="scissors"
+    />
+    <p>${playerChoice}</p>`;
+      break;
+    case "Lizard":
+      userIMG.innerHTML = `
+      
+      <h3>YOU</h3>
+      <img
+      class="img-fluid"
+      src="./Assets/pixel-art-illustration-komodo-dragon-pixelated-komodo-komodo-dragon-lizard-reptile-animal-icon-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-free-vector.jpg"
+      alt="Lizard"
+    />
+    <p>${playerChoice}</p>`;
+      break;
+    case "Spock":
+      userIMG.innerHTML = `
+      <h3>YOU</h3>
+      <img class="img-fluid" src="./Assets/Spock.webp" alt="spock" />
+      <p>${playerChoice}</p>`;
+      break;
+  }
+}
+
 function determineWinner(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
     return "It's a tie!";
@@ -158,6 +214,7 @@ document.getElementById("rock").addEventListener("click", function () {
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
   updateCpuChoiceImage(computerChoice);
+  updateUserChoice(playerChoice);
 });
 
 document.getElementById("paper").addEventListener("click", function () {
@@ -169,6 +226,7 @@ document.getElementById("paper").addEventListener("click", function () {
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
   updateCpuChoiceImage(computerChoice);
+  updateUserChoice(playerChoice);
 });
 
 document.getElementById("scissors").addEventListener("click", function () {
@@ -180,6 +238,7 @@ document.getElementById("scissors").addEventListener("click", function () {
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
   updateCpuChoiceImage(computerChoice);
+  updateUserChoice(playerChoice);
 });
 
 document.getElementById("Lizard").addEventListener("click", function () {
@@ -191,6 +250,7 @@ document.getElementById("Lizard").addEventListener("click", function () {
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
   updateCpuChoiceImage(computerChoice);
+  updateUserChoice(playerChoice);
 });
 
 document.getElementById("spock").addEventListener("click", function () {
@@ -202,4 +262,5 @@ document.getElementById("spock").addEventListener("click", function () {
   const result = determineWinner(playerChoice, computerChoice);
   updateScore(result);
   updateCpuChoiceImage(computerChoice);
+  updateUserChoice(playerChoice);
 });
