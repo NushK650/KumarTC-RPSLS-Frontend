@@ -28,7 +28,7 @@ let cpuScore = 0;
 
 async function getComputerChoice() {
   try {
-    const response = await fetch("https://api.example.com/get-choice"); // Replace this URL with your actual API endpoint
+    const response = await fetch("https://kumartc-rpsls-ckckc0gmf6e7b5cs.westus-01.azurewebsites.net/RPSLS/RPSLS"); // Replace this URL with your actual API endpoint
     const data = await response.json();
     return data.choice; // Assuming the API returns an object with a "choice" property
   } catch (error) {
