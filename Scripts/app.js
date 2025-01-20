@@ -23,19 +23,23 @@ playAgain.addEventListener("click", function () {
 const playerScoreSpan = document.getElementById("playerScore");
 const cpuScoreSpan = document.getElementById("cpuScore");
 
-
 let playerScore = 0;
 let cpuScore = 0;
 
-function getComputerChoice() {
-  const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
-  const randomIndex = Math.floor(Math.random() * choices.length);
-  return choices[randomIndex];
+async function getComputerChoice() {
+  try {
+    const response = await fetch("https://api.example.com/get-choice"); // Replace this URL with your actual API endpoint
+    const data = await response.json();
+    return data.choice; // Assuming the API returns an object with a "choice" property
+  } catch (error) {
+    console.error("Error fetching CPU choice:", error);
+    return "Rock"; // Default fallback in case of error
+  }
 }
+
 function updateCpuChoiceImage(computerChoice) {
   const cpuIMG = document.getElementById("cpuIMG");
 
-  // Update the image source and alt text based on the CPU's choice
   switch (computerChoice) {
     case "Rock":
       cpuIMG.innerHTML = `
@@ -46,7 +50,6 @@ function updateCpuChoiceImage(computerChoice) {
       alt="rock"
     /> 
     <p>${computerChoice}</p> `;
-
       break;
     case "Paper":
       cpuIMG.innerHTML = `
@@ -70,7 +73,6 @@ function updateCpuChoiceImage(computerChoice) {
       break;
     case "Lizard":
       cpuIMG.innerHTML = `
-      
       <h3>CPU</h3>
       <img
       class="img-fluid"
@@ -91,7 +93,6 @@ function updateCpuChoiceImage(computerChoice) {
 function updateUserChoice(playerChoice) {
   const userIMG = document.getElementById("userIMG");
 
-  // Update the image source and alt text based on the CPU's choice
   switch (playerChoice) {
     case "Rock":
       userIMG.innerHTML = `
@@ -102,7 +103,6 @@ function updateUserChoice(playerChoice) {
       alt="rock"
     /> 
     <p>${playerChoice}</p> `;
-
       break;
     case "Paper":
       userIMG.innerHTML = `
@@ -126,7 +126,6 @@ function updateUserChoice(playerChoice) {
       break;
     case "Lizard":
       userIMG.innerHTML = `
-      
       <h3>YOU</h3>
       <img
       class="img-fluid"
@@ -207,60 +206,65 @@ function updateScore(result) {
 
 document.getElementById("rock").addEventListener("click", function () {
   const playerChoice = "Rock";
-  const computerChoice = getComputerChoice();
-  hide.classList.add("hidden");
-  playAgain.classList.remove("hidden");
-  display.classList.remove("hidden");
-  const result = determineWinner(playerChoice, computerChoice);
-  updateScore(result);
-  updateCpuChoiceImage(computerChoice);
-  updateUserChoice(playerChoice);
+  getComputerChoice().then((computerChoice) => {
+    hide.classList.add("hidden");
+    playAgain.classList.remove("hidden");
+    display.classList.remove("hidden");
+    const result = determineWinner(playerChoice, computerChoice);
+    updateScore(result);
+    updateCpuChoiceImage(computerChoice);
+    updateUserChoice(playerChoice);
+  });
 });
 
 document.getElementById("paper").addEventListener("click", function () {
   const playerChoice = "Paper";
-  const computerChoice = getComputerChoice();
-  hide.classList.add("hidden");
-  playAgain.classList.remove("hidden");
-  display.classList.remove("hidden");
-  const result = determineWinner(playerChoice, computerChoice);
-  updateScore(result);
-  updateCpuChoiceImage(computerChoice);
-  updateUserChoice(playerChoice);
+  getComputerChoice().then((computerChoice) => {
+    hide.classList.add("hidden");
+    playAgain.classList.remove("hidden");
+    display.classList.remove("hidden");
+    const result = determineWinner(playerChoice, computerChoice);
+    updateScore(result);
+    updateCpuChoiceImage(computerChoice);
+    updateUserChoice(playerChoice);
+  });
 });
 
 document.getElementById("scissors").addEventListener("click", function () {
   const playerChoice = "Scissors";
-  const computerChoice = getComputerChoice();
-  hide.classList.add("hidden");
-  playAgain.classList.remove("hidden");
-  display.classList.remove("hidden");
-  const result = determineWinner(playerChoice, computerChoice);
-  updateScore(result);
-  updateCpuChoiceImage(computerChoice);
-  updateUserChoice(playerChoice);
+  getComputerChoice().then((computerChoice) => {
+    hide.classList.add("hidden");
+    playAgain.classList.remove("hidden");
+    display.classList.remove("hidden");
+    const result = determineWinner(playerChoice, computerChoice);
+    updateScore(result);
+    updateCpuChoiceImage(computerChoice);
+    updateUserChoice(playerChoice);
+  });
 });
 
 document.getElementById("Lizard").addEventListener("click", function () {
   const playerChoice = "Lizard";
-  const computerChoice = getComputerChoice();
-  hide.classList.add("hidden");
-  playAgain.classList.remove("hidden");
-  display.classList.remove("hidden");
-  const result = determineWinner(playerChoice, computerChoice);
-  updateScore(result);
-  updateCpuChoiceImage(computerChoice);
-  updateUserChoice(playerChoice);
+  getComputerChoice().then((computerChoice) => {
+    hide.classList.add("hidden");
+    playAgain.classList.remove("hidden");
+    display.classList.remove("hidden");
+    const result = determineWinner(playerChoice, computerChoice);
+    updateScore(result);
+    updateCpuChoiceImage(computerChoice);
+    updateUserChoice(playerChoice);
+  });
 });
 
 document.getElementById("spock").addEventListener("click", function () {
   const playerChoice = "Spock";
-  const computerChoice = getComputerChoice();
-  hide.classList.add("hidden");
-  playAgain.classList.remove("hidden");
-  display.classList.remove("hidden");
-  const result = determineWinner(playerChoice, computerChoice);
-  updateScore(result);
-  updateCpuChoiceImage(computerChoice);
-  updateUserChoice(playerChoice);
+  getComputerChoice().then((computerChoice) => {
+    hide.classList.add("hidden");
+    playAgain.classList.remove("hidden");
+    display.classList.remove("hidden");
+    const result = determineWinner(playerChoice, computerChoice);
+    updateScore(result);
+    updateCpuChoiceImage(computerChoice);
+    updateUserChoice(playerChoice);
+  });
 });
