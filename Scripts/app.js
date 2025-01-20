@@ -22,7 +22,7 @@ playAgain.addEventListener("click", function () {
 
 const playerScoreSpan = document.getElementById("playerScore");
 const cpuScoreSpan = document.getElementById("cpuScore");
-const resultMessage = document.getElementById("resultMessage");
+
 
 let playerScore = 0;
 let cpuScore = 0;

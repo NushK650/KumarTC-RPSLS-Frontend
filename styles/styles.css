@@ -44,6 +44,18 @@ body
     text-align: center;
     margin-left: 300px ;
 }
+#user2IMG
+{
+    color: white;
+    width: 120px;
+    border-radius: 5px;
+    border:solid;
+    background-color: #13004C;
+    border-color: white;
+    font-family: 'Pixel', Arial, Helvetica, sans-serif !important;
+    text-align: center;
+    margin-left: 300px ;
+}
 
 .button
  {

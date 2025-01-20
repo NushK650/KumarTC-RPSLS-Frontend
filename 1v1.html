@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="d-flex justify-content-end">
-      <button class="button me-3" id="rulesBtn" >Rules</button>
+      <button class="button me-3" id="rulesBtn">Rules</button>
       <a href="index.html" class="button"> Home</a>
     </div>
     <div id="rulesPopup" class="popup hidden">
@@ -31,35 +31,97 @@
         <li>Spock beats Rock</li>
         <li>Rock beats Scissors</li>
       </ul>
-      </div>
+    </div>
     <h1 class="d-flex justify-content-center title">
       Rock, Paper, Scissors, Lizard, Spock
     </h1>
-
-    <div class="game-container"></div>
+    <div class="game-container">
       <div class="scoreboard">
         <div class="d-flex justify-content-center">
           <h2>Score</h2>
         </div>
         <div class="d-flex justify-content-evenly">
           <p>P1: <span id="playerScore">0</span></p>
-          <p>P2: <span id="cpuScore">0</span></p>
+          <p>P2: <span id="player2Score">0</span></p>
         </div>
       </div>
-    
-      <h2 class="pickOne">Player 1</h2>
-      <div class="options">
-        <button class="option" >
-          <img class="img-fluid" src="./Assets/vecteezy_stones-or-rocks-natural-object-pixel-art-retro-vintage_.jpg" alt="rock">Rock</button>
-        <button class="option" > <img class="img-fluid" src="./Assets/vecteezy_paper-sheet-pixel_10968271.jpg" alt="paper"> Paper</button>
-        <button class="option" > <img class="img-fluid" src="./Assets/vecteezy_pixel-art-illustration-scissors-pixelated-scissors-tools_24773302.jpg" alt="scissors">Scissors</button>
-        <button class="option" ><img class="img-fluid" src="./Assets/pixel-art-illustration-komodo-dragon-pixelated-komodo-komodo-dragon-lizard-reptile-animal-icon-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-free-vector.jpg" alt="Lizard">Lizard</button>
-        <button class="option" > <img class="img-fluid" src="./Assets/Spock.webp" alt="spock"> Spock</button>
+
+      <h2 id="pickOne">Player 1</h2>
+      <div id="display" class="hidden">
+        <div id="userIMG"></div>
+        <div id="user2IMG"></div>
       </div>
+      <div id="hide" class="options">
+        <button id="rock" class="option">
+          <img
+            class="img-fluid"
+            src="./Assets/vecteezy_stones-or-rocks-natural-object-pixel-art-retro-vintage_.jpg"
+            alt="rock"
+          />Rock
+        </button>
+        <button id="paper" class="option">
+          <img
+            class="img-fluid"
+            src="./Assets/vecteezy_paper-sheet-pixel_10968271.jpg"
+            alt="paper"
+          />
+          Paper
+        </button>
+        <button id="scissors" class="option">
+          <img
+            class="img-fluid"
+            src="./Assets/vecteezy_pixel-art-illustration-scissors-pixelated-scissors-tools_24773302.jpg"
+            alt="scissors"
+          />Scissors
+        </button>
+        <button id="Lizard" class="option">
+          <img
+            class="img-fluid"
+            src="./Assets/pixel-art-illustration-komodo-dragon-pixelated-komodo-komodo-dragon-lizard-reptile-animal-icon-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-free-vector.jpg"
+            alt="Lizard"
+          />Lizard
+        </button>
+        <button id="spock" class="option">
+          <img class="img-fluid" src="./Assets/Spock.webp" alt="spock"/> Spock
+        </button>
+      </div>
+      <div id="hide2" class="options hidden">
+        <button id="rock2" class="option">
+          <img
+            class="img-fluid"
+            src="./Assets/vecteezy_stones-or-rocks-natural-object-pixel-art-retro-vintage_.jpg"
+            alt="rock"
+          />Rock
+        </button>
+        <button id="paper2" class="option">
+          <img
+            class="img-fluid"
+            src="./Assets/vecteezy_paper-sheet-pixel_10968271.jpg"
+            alt="paper"
+          />
+          Paper
+        </button>
+        <button id="scissors2" class="option">
+          <img
+            class="img-fluid"
+            src="./Assets/vecteezy_pixel-art-illustration-scissors-pixelated-scissors-tools_24773302.jpg"
+            alt="scissors"
+          />Scissors
+        </button>
+        <button id="Lizard2" class="option">
+          <img
+            class="img-fluid"
+            src="./Assets/pixel-art-illustration-komodo-dragon-pixelated-komodo-komodo-dragon-lizard-reptile-animal-icon-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-free-vector.jpg"
+            alt="Lizard"
+          />Lizard
+        </button>
+        <button id="spock2" class="option">
+          <img class="img-fluid" src="./Assets/Spock.webp" alt="spock"/> Spock
+        </button>
+      </div>
+      <button id="playAgain" class="button hidden">Play Again</button>
     </div>
-    <script
-    src="./Scripts/app.js"
-    ></script>
+    <script src="./Scripts/1v1.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -67,3 +129,4 @@
     ></script>
   </body>
 </html>
+
